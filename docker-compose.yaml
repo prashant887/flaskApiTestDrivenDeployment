@@ -1,0 +1,16 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - '5025:5025'
+  test:
+    container_name: api-test
+    build:
+        context: .
+        dockerfile: docker/Dockerfile
+    command: ["python", "/app/unitTest.py"]
+        

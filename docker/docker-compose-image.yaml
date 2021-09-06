@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    image: apitdd
+    ports:
+      - '5025:5025'
+  test:
+    container_name: api-test
+    image: apitdd
+    command: ["python", "/app/unitTest.py"]
